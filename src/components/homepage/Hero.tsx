@@ -586,10 +586,10 @@ export default function Hero() {
                   className="inline-block"
                   style={{ opacity: "1", transform: "none" }}
                 >
-                  Container
+                  Container shipping from
                 </span>
               </span>
-              <span className="inline-block overflow-hidden align-bottom">
+              {/* <span className="inline-block overflow-hidden align-bottom">
                 <span
                   className="inline-block"
                   style={{ opacity: "1", transform: "none" }}
@@ -604,7 +604,7 @@ export default function Hero() {
                 >
                   from
                 </span>
-              </span>
+              </span> */}
               <span
                 className="relative inline-block bg-gradient-to-r px-1 pb-1 rounded-lg from-red-200 to-rose-200 text-neutral-900 dark:from-red-500/70 dark:to-rose-600/70 dark:text-white"
                 style={{
