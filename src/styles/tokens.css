@@ -1,0 +1,13 @@
+/* ConTurk design tokens — source-derived semantic aliases for future reusable pages. */
+:root {
+  --conturk-brand: #f17463;
+  --conturk-red: #fb2c36;
+  --conturk-red-soft: #ff6568;
+  --conturk-background: #0a0a0a;
+  --conturk-panel: #18181b;
+  --conturk-charcoal: #343434;
+  --conturk-text: #fafafa;
+  --conturk-muted: #a1a1a1;
+  --conturk-border: rgba(255,255,255,.1);
+  --conturk-radius: .625rem;
+}
