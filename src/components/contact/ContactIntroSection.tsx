@@ -1,5 +1,4 @@
 import SourceMarkup from "@/components/ui/SourceMarkup";
-import ContactInstantChannels from "./ContactInstantChannels";
 
 export default function ContactIntroSection() {
   return (

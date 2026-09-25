@@ -26,14 +26,14 @@ export default function TopBar() {
         </svg>
         Mon–Fri 08:30–17:30 (GMT+3)
       </span>
-      <a className="inline-flex items-center gap-1.5 transition-colors hover:text-red-600 dark:hover:text-red-400" href="https://conturk.com/contact-us#offices">
+      <a className="inline-flex items-center gap-1.5 transition-colors hover:text-red-600 dark:hover:text-red-400" href="/contact-us#offices">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin h-3.5 w-3.5" aria-hidden="true">
           <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
           <circle cx="12" cy="10" r="3"></circle>
         </svg>
         Offices & Addresses
       </a>
-      <a className="inline-flex items-center gap-1.5 transition-colors hover:text-red-600 dark:hover:text-red-400" href="https://conturk.com/contact-us#bank-details">
+      <a className="inline-flex items-center gap-1.5 transition-colors hover:text-red-600 dark:hover:text-red-400" href="/contact-us#bank-details">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-landmark h-3.5 w-3.5" aria-hidden="true">
           <path d="M10 18v-7"></path>
           <path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"></path>

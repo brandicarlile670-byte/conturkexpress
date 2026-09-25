@@ -1,10 +1,11 @@
-import FooterOptionalChannels from "./FooterOptionalChannels";
+
+import Link from "next/link";
 
 export default function FooterMain() {
   return (
     <div className="max-w-7xl mx-auto text-sm text-gray-600 flex sm:flex-row flex-col justify-between items-start md:px-8">
       <div>
-        <a href="/" aria-label="ConTurk Shipping home" className="inline-flex shrink-0 items-center mb-4">
+        <Link href="/" aria-label="ConTurk Shipping home" className="inline-flex shrink-0 items-center mb-4">
           <img
             alt="ConTurk Shipping"
             loading="lazy"
@@ -26,7 +27,7 @@ export default function FooterMain() {
             style={{ color: "transparent", height: "44px", width: "auto" }}
             src="/images/conturk-logo-footer-light-text.png"
           />
-        </a>
+        </Link>
         <div className="mt-2">© 2026 ConTurk. All rights reserved.</div>
         <div className="mt-6 flex max-w-xs flex-col gap-2 text-neutral-600 dark:text-neutral-300">
           <a href="tel:+902163252299" className="inline-flex items-center gap-2 font-semibold text-neutral-800 transition-colors hover:text-red-600 dark:text-neutral-100 dark:hover:text-red-400">
@@ -37,10 +38,10 @@ export default function FooterMain() {
             <span aria-hidden="true" className="h-4 w-4 shrink-0">✉</span>
             contact@conturk.com
           </a>
-          <a className="inline-flex items-start gap-2 transition-colors hover:text-neutral-800 dark:hover:text-white" href="/contact-us#offices">
+          <Link className="inline-flex items-start gap-2 transition-colors hover:text-neutral-800 dark:hover:text-white" href="/contact-us#offices">
             <span aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0">⌖</span>
             <span>General Asim Gunduz Cad. No:73 Floor:1, Caferaga Mah. Kadikoy, Istanbul / Turkey</span>
-          </a>
+          </Link>
         </div>
 
         {/* Optional: uncomment to restore Mobile App, WeChat and WhatsApp containers. */}
@@ -51,31 +52,31 @@ export default function FooterMain() {
         <div className="flex justify-center space-y-4 flex-col w-full">
           <p className="transition-colors hover:text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">ConTurk</p>
           <ul className="transition-colors text-neutral-600 dark:text-neutral-300 list-none space-y-4">
-            <li><a className="hover:text-neutral-800" href="/careers">Careers</a></li>
-            <li><a className="hover:text-neutral-800" href="/contact-us">Contact</a></li>
+            <li><a className="hover:text-neutral-800" href="https://conturk.com/careers" target="_blank" rel="noopener noreferrer">Careers</a></li>
+            <li><Link className="hover:text-neutral-800" href="/contact-us">Contact</Link></li>
           </ul>
         </div>
         <div className="flex justify-center space-y-4 flex-col w-full">
           <p className="transition-colors hover:text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">Solutions</p>
           <ul className="transition-colors text-neutral-600 dark:text-neutral-300 list-none space-y-4">
-            <li><a className="hover:text-neutral-800" href="/services">Services</a></li>
-            <li><a className="hover:text-neutral-800" href="/about-us">About Us</a></li>
+            <li><Link className="hover:text-neutral-800" href="/services">Services</Link></li>
+            <li><Link className="hover:text-neutral-800" href="/about-us">About Us</Link></li>
           </ul>
         </div>
         <div className="flex justify-center space-y-4 flex-col w-full">
           <p className="transition-colors hover:text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">Resources</p>
           <ul className="transition-colors text-neutral-600 dark:text-neutral-300 list-none space-y-4">
-            <li><a className="hover:text-neutral-800" href="/announcements">Announcements</a></li>
-            <li><a className="hover:text-neutral-800" href="/insurance-and-terms">Insurance &amp; Terms</a></li>
-            <li><a className="hover:text-neutral-800" href="/contact-us#bank-details">Bank Details</a></li>
+            <li><Link className="hover:text-neutral-800" href="/announcements">Announcements</Link></li>
+            <li><Link className="hover:text-neutral-800" href="/insurance-and-terms">Insurance &amp; Terms</Link></li>
+            <li><Link className="hover:text-neutral-800" href="/contact-us#bank-details">Bank Details</Link></li>
           </ul>
         </div>
         <div className="flex justify-center space-y-4 flex-col w-full">
           <p className="transition-colors hover:text-neutral-800 text-neutral-600 dark:text-neutral-300 font-bold">Legal</p>
           <ul className="transition-colors text-neutral-600 dark:text-neutral-300 list-none space-y-4">
-            <li><a className="hover:text-neutral-800" href="/privacy-policy">Privacy Policy</a></li>
-            <li><a className="hover:text-neutral-800" href="/privacy-policy#cookies">Cookie Policy</a></li>
-            <li><a className="hover:text-neutral-800" href="/contact-us#delete-account">Delete account</a></li>
+            <li><a className="hover:text-neutral-800" href="https://conturk.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+            <li><a className="hover:text-neutral-800" href="https://conturk.com/privacy-policy#cookies" target="_blank" rel="noopener noreferrer">Cookie Policy</a></li>
+            <li><Link className="hover:text-neutral-800" href="/contact-us#delete-account">Delete account</Link></li>
           </ul>
         </div>
       </div>

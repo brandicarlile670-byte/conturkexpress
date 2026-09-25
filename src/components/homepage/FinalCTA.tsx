@@ -18,13 +18,13 @@ export default function FinalCTA() {
             </svg>
             ConTurk
           </div>
-          <h2 className="text-2xl font-bold text-white md:text-3xl">Let's plan the right solution for your cargo together</h2>
+          <h2 className="text-2xl font-bold text-white md:text-3xl">Let&apos;s plan the right solution for your cargo together</h2>
           <p className="mt-3 text-base text-neutral-400">Our expert team is by your side at every stage of your shipment.</p>
         </div>
         <div className="group relative shrink-0">
-          <a data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-11 rounded-lg border-transparent bg-brand px-8 text-base text-white hover:bg-brand/90" href="https://conturk.com/contact-us">
+          <a data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-11 rounded-lg border-transparent bg-brand px-8 text-base text-white hover:bg-brand/90" href="/contact-us">
             <span className="inline-flex items-center gap-2">
-              Get a Quote
+              Contact Us
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>

@@ -8,7 +8,6 @@ import ContactStrip from "@/components/homepage/ContactStrip";
 import Numbers from "@/components/homepage/Numbers";
 import Services from "@/components/homepage/Services";
 import Journey from "@/components/homepage/Journey";
-import MobileApp from "@/components/homepage/MobileApp";
 import FinalCTA from "@/components/homepage/FinalCTA";
 
 export default function Home() {

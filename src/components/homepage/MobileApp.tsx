@@ -17,7 +17,7 @@ export default function MobileApp() {
           </span>
         </span>
         <h2 className="mt-4 bg-linear-to-b from-neutral-800 to-neutral-900 bg-clip-text text-2xl font-bold text-transparent md:text-3xl dark:from-neutral-100 dark:to-neutral-400">ConTurk, now in your pocket</h2>
-        <p className="mx-auto mt-3 max-w-md text-base text-neutral-600 md:mx-0 dark:text-gray-400">Track your shipments in real time, get quotes in seconds and stay informed with instant notifications. Download the app and reach us in one tap.</p>
+        <p className="mx-auto mt-3 max-w-md text-base text-neutral-600 md:mx-0 dark:text-gray-400">Track your shipments and stay informed with instant notifications. Download the app and reach us in one tap.</p>
         <div className="mt-7 flex flex-wrap items-center justify-center gap-3 md:justify-start">
           <div style={{opacity: "1", transform: "none"}}>
             <a href="https://apps.apple.com/us/app/conturk-shipping/id6752247281" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store" className="group inline-flex items-center gap-3 rounded-xl border border-neutral-700/80 bg-neutral-950 text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-neutral-500 hover:shadow-lg dark:border-neutral-700 dark:bg-black dark:hover:border-neutral-500 px-4 py-2.5">

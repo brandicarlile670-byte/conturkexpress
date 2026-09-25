@@ -15,7 +15,7 @@ export default async function TrackingDetailsAdminPage({ params }: Params) {
   if (!(await isAdminAuthenticated())) redirect("/admin/tracking/login");
 
   const { trackingNo } = await params;
-  const record = getTrackingByNo(decodeURIComponent(trackingNo));
+  const record = await getTrackingByNo(decodeURIComponent(trackingNo));
 
   if (!record) notFound();
 
