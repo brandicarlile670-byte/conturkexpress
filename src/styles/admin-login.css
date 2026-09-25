@@ -1,0 +1,101 @@
+.ct-admin-login {--brand-color: #e64a19;
+            --brand-hover: #d84315;
+            --bg-color: #f9f9f9;
+            --panel-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #eaeaea;
+            --input-bg: #ffffff;
+            --radius: 6px;}
+.ct-admin-login * {box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;}
+.ct-admin-login {background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;}
+.ct-admin-login .login-container {background-color: var(--panel-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border: 1px solid var(--border-color);}
+.ct-admin-login .brand {display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;}
+.ct-admin-login .logo-svg {width: 60px;
+            height: 60px;}
+.ct-admin-login .brand h1 {font-size: 24px;
+            font-weight: bold;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;}
+.ct-admin-login .admin-tag {background-color: var(--text-main);
+            color: white;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            vertical-align: middle;
+            margin-left: 8px;}
+.ct-admin-login .form-group {display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;}
+.ct-admin-login label {font-size: 13px;
+            font-weight: bold;
+            color: var(--text-main);}
+.ct-admin-login input[type="text"], .ct-admin-login input[type="password"] {width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 14px;
+            color: var(--text-main);
+            background-color: var(--input-bg);
+            transition: border-color 0.2s, box-shadow 0.2s;}
+.ct-admin-login input[type="text"]:focus, .ct-admin-login input[type="password"]:focus {outline: none;
+            border-color: var(--brand-color);
+            box-shadow: 0 0 0 3px rgba(230, 74, 25, 0.1);}
+.ct-admin-login .btn {width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;}
+.ct-admin-login .btn-primary {background-color: var(--brand-color);
+            color: white;}
+.ct-admin-login .btn-primary:hover {background-color: var(--brand-hover);}
+/* Responsive Adjustments */
+@media (max-width: 480px) {.ct-admin-login {padding: 15px;}
+.ct-admin-login .login-container {padding: 30px 20px;}
+.ct-admin-login .brand {margin-bottom: 25px;}
+.ct-admin-login .brand h1 {font-size: 20px;}
+.ct-admin-login .logo-svg {width: 50px;
+                height: 50px;}
+/* Prevents iOS Safari auto-zoom on input focus */
+.ct-admin-login input[type="text"], .ct-admin-login input[type="password"] {font-size: 16px;
+                padding: 14px 12px;}}
+/* Message Box Styles */
+.ct-admin-login .msg-box {display: none;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: var(--radius);
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            border: 1px solid #bbdefb;
+            font-size: 14px;
+            text-align: center;}

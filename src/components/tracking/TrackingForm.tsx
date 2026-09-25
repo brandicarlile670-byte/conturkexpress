@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { getTrackingUrl, isValidTrackingId, normalizeTrackingId } from "@/lib/tracking";
+import { useRouter } from "next/navigation";
+import { getTrackingPath, isValidTrackingId, normalizeTrackingId } from "@/lib/tracking";
 
 export default function TrackingForm() {
+  const router = useRouter();
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
 
@@ -16,18 +18,11 @@ export default function TrackingForm() {
       return;
     }
 
-    const target = getTrackingUrl(id);
-    if (!target) {
-      setError("Tracking is not connected yet.");
-      return;
-    }
-
-    setError("");
-    window.location.assign(target);
+    router.push(getTrackingPath(id));
   }
 
   return (
-<form noValidate={true} className="w-full">
+<form noValidate={true} className="w-full" onSubmit={handleSubmit}>
   <div className="group relative flex flex-col gap-2 rounded-2xl border p-2 shadow-sm transition-all duration-300 sm:flex-row sm:items-center border-neutral-200/80 bg-white/80 hover:-translate-y-0.5 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950/50 focus-within:border-red-400/60 focus-within:shadow-[0_0_0_3px_rgba(248,113,113,0.18)] dark:focus-within:border-red-400/50">
     <div aria-hidden="true" className="pointer-events-none absolute -inset-1 -z-10 rounded-2xl bg-linear-to-r from-red-400/30 via-red-500/25 to-[#f17463]/20 opacity-0 blur-md transition-opacity duration-300 group-focus-within:opacity-100 group-hover:opacity-60"></div>
     <div className="relative flex-1">

@@ -1,0 +1,5 @@
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { isValidTrackingId, normalizeTrackingId } from "@/lib/tracking";
+export default function PublicTrackingLookup(){const router=useRouter();const [value,setValue]=useState("");const [error,setError]=useState("");function submit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();const id=normalizeTrackingId(value);if(!isValidTrackingId(id)){setError("Please enter a Bill of Lading or container number.");return;}router.push(`/tracking?number=${encodeURIComponent(id)}`);}return <div className="ct-public-tracking"><div className="lookup-shell"><div className="header"><h1>Parcel Tracking</h1></div><form className="lookup-form" onSubmit={submit}><label htmlFor="publicTrackingId">Tracking Number</label><input id="publicTrackingId" value={value} onChange={e=>setValue(e.target.value)} placeholder="Enter your tracking number"/><button type="submit" className="lookup-button">Track Shipment</button>{error?<p className="lookup-error">{error}</p>:null}</form></div></div>}

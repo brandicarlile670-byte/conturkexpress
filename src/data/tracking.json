@@ -1,0 +1,168 @@
+[
+  {
+    "id": 101,
+    "trackingNo": "CSX465028249193",
+    "currentStatus": "Departed",
+    "bookingMode": "Paid",
+    "scheduledDelivery": "07/03/2023, By End Of Day",
+    "customerFirstName": "Linne",
+    "customerLastName": "Humbargar",
+    "origin": "CSX - Turkey",
+    "destination": "Turkey",
+    "services": "EXPRESS",
+    "type": "Consignment",
+    "weight": "7.5600000000000 kg",
+    "pickupDateTime": "07/02/2023",
+    "description": "Herbal Extract Sealed in a brown carton, BC Code 300891",
+    "shipper": {
+      "name": "CAN MAKBULE PHARIOGUN ORIJINAL BITKISEL ÜRÜNLER",
+      "phone": "+90 (531) 375 6184",
+      "address": "Dervişali, Nurettin Tekke Sk. No:07, 34078 Fatih/İstanbul, Türkiye"
+    },
+    "consignee": {
+      "name": "Linne Humbargar",
+      "phone": "+82 61 381 7072",
+      "address": "Avlon Works, Severn Rd, Hallen, Bristol BS10 7ZE, United Kingdom"
+    },
+    "travelHistory": [
+      {
+        "id": "evt-101-1",
+        "location": "Turkey",
+        "status": "Processing",
+        "dateTime": "2023-06-30 06:33:59",
+        "remarks": "Consignment Accepted For Delivery"
+      },
+      {
+        "id": "evt-101-2",
+        "location": "Turkey",
+        "status": "Processing",
+        "dateTime": "2023-06-30 13:54:55",
+        "remarks": "Arrived at sort facility in KAGITHASE/ISTANBUL"
+      },
+      {
+        "id": "evt-101-3",
+        "location": "Turkey",
+        "status": "Dispatched",
+        "dateTime": "2023-06-30 21:06:06",
+        "remarks": "Left KAGITHANGE sort facility"
+      },
+      {
+        "id": "evt-101-4",
+        "location": "Turkey",
+        "status": "Arrived",
+        "dateTime": "2023-07-01 15:24:36",
+        "remarks": "Arrived Istanbul international Airport - Turkey"
+      },
+      {
+        "id": "evt-101-5",
+        "location": "Turkey",
+        "status": "Custom Unit",
+        "dateTime": "2023-07-01 15:25:55",
+        "remarks": "Customs Export Clearance to be updated"
+      },
+      {
+        "id": "evt-101-6",
+        "location": "Turkey",
+        "status": "Awaiting-Departure",
+        "dateTime": "2023-07-02 07:42:50",
+        "remarks": "Customs Export Clearance Approved"
+      },
+      {
+        "id": "evt-101-7",
+        "location": "Turkey",
+        "status": "Departed",
+        "dateTime": "2023-07-02 14:33:16",
+        "remarks": "Departed Istanbul international Airport - Turkey"
+      }
+    ],
+    "createdAt": "2026-09-24T00:00:00.000Z",
+    "updatedAt": "2026-09-24T00:00:00.000Z"
+  },
+  {
+    "id": 102,
+    "trackingNo": "TRK0092837482",
+    "currentStatus": "Processing",
+    "bookingMode": "Paid",
+    "scheduledDelivery": "",
+    "customerFirstName": "Ahmed",
+    "customerLastName": "Yilmaz",
+    "origin": "",
+    "destination": "",
+    "services": "",
+    "type": "",
+    "weight": "",
+    "pickupDateTime": "",
+    "description": "",
+    "shipper": {
+      "name": "",
+      "phone": "",
+      "address": ""
+    },
+    "consignee": {
+      "name": "",
+      "phone": "",
+      "address": ""
+    },
+    "travelHistory": [],
+    "createdAt": "2026-09-24T00:00:00.000Z",
+    "updatedAt": "2026-09-24T00:00:00.000Z"
+  },
+  {
+    "id": 103,
+    "trackingNo": "GLB9938475211",
+    "currentStatus": "Arrived",
+    "bookingMode": "To Pay",
+    "scheduledDelivery": "",
+    "customerFirstName": "Sarah",
+    "customerLastName": "Connor",
+    "origin": "",
+    "destination": "",
+    "services": "",
+    "type": "",
+    "weight": "",
+    "pickupDateTime": "",
+    "description": "",
+    "shipper": {
+      "name": "",
+      "phone": "",
+      "address": ""
+    },
+    "consignee": {
+      "name": "",
+      "phone": "",
+      "address": ""
+    },
+    "travelHistory": [],
+    "createdAt": "2026-09-24T00:00:00.000Z",
+    "updatedAt": "2026-09-24T00:00:00.000Z"
+  },
+  {
+    "id": 104,
+    "trackingNo": "EXP4409382173",
+    "currentStatus": "Delivered",
+    "bookingMode": "Paid",
+    "scheduledDelivery": "",
+    "customerFirstName": "John",
+    "customerLastName": "Doe",
+    "origin": "",
+    "destination": "",
+    "services": "",
+    "type": "",
+    "weight": "",
+    "pickupDateTime": "",
+    "description": "",
+    "shipper": {
+      "name": "",
+      "phone": "",
+      "address": ""
+    },
+    "consignee": {
+      "name": "",
+      "phone": "",
+      "address": ""
+    },
+    "travelHistory": [],
+    "createdAt": "2026-09-24T00:00:00.000Z",
+    "updatedAt": "2026-09-24T00:00:00.000Z"
+  }
+]

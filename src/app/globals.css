@@ -7,3 +7,8 @@
 
 html { scroll-behavior: smooth; }
 body { margin: 0; }
+
+@import "../styles/tracking.css";
+@import "../styles/admin-login.css";
+@import "../styles/admin-list.css";
+@import "../styles/admin-editor.css";
