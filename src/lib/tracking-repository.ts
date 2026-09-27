@@ -1,6 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { TrackingEvent, TrackingRecord, TrackingParty } from "./tracking-types";
+import type {
+  TrackingEvent,
+  TrackingRecord,
+  TrackingParty,
+} from "./tracking-types";
 
 const dataPath = path.join(process.cwd(), "src", "data", "tracking.json");
 const tableName = "tracking_records";
@@ -11,13 +15,18 @@ function getSupabaseConfig() {
 
   if (url && secretKey) return { url, secretKey };
   if (process.env.NODE_ENV === "production") {
-    throw new Error("SUPABASE_URL and SUPABASE_SECRET_KEY must be configured in production.");
+    throw new Error(
+      "SUPABASE_URL and SUPABASE_SECRET_KEY must be configured in production.",
+    );
   }
 
   return null;
 }
 
-async function supabaseRequest<T>(pathName: string, init?: RequestInit): Promise<T> {
+async function supabaseRequest<T>(
+  pathName: string,
+  init?: RequestInit,
+): Promise<T> {
   const config = getSupabaseConfig();
   if (!config) throw new Error("Supabase is not configured.");
 
@@ -26,7 +35,6 @@ async function supabaseRequest<T>(pathName: string, init?: RequestInit): Promise
     cache: "no-store",
     headers: {
       apikey: config.secretKey,
-      Authorization: `Bearer ${config.secretKey}`,
       "Content-Type": "application/json",
       ...(init?.headers ?? {}),
     },
@@ -34,7 +42,9 @@ async function supabaseRequest<T>(pathName: string, init?: RequestInit): Promise
 
   if (!response.ok) {
     const body = await response.text().catch(() => "");
-    throw new Error(`Supabase request failed (${response.status}): ${body || response.statusText}`);
+    throw new Error(
+      `Supabase request failed (${response.status}): ${body || response.statusText}`,
+    );
   }
 
   const text = await response.text();
@@ -55,7 +65,11 @@ function getAllJson() {
 
 function getJsonByNo(no: string) {
   const normalized = no.trim().toUpperCase();
-  return getAllJson().find((record) => record.trackingNo.trim().toUpperCase() === normalized) ?? null;
+  return (
+    getAllJson().find(
+      (record) => record.trackingNo.trim().toUpperCase() === normalized,
+    ) ?? null
+  );
 }
 
 function saveAllJson(records: TrackingRecord[]) {
@@ -130,11 +144,16 @@ function recordToRow(record: TrackingRecord) {
   };
 }
 
-function mergeRecord(existing: TrackingRecord, patch: Partial<TrackingRecord>): TrackingRecord {
+function mergeRecord(
+  existing: TrackingRecord,
+  patch: Partial<TrackingRecord>,
+): TrackingRecord {
   const normalizedNo = existing.trackingNo.trim().toUpperCase();
   const incomingTrackingNo = patch.trackingNo?.trim();
   if (incomingTrackingNo && incomingTrackingNo.toUpperCase() !== normalizedNo) {
-    throw new Error("Tracking number cannot be changed after the record is created.");
+    throw new Error(
+      "Tracking number cannot be changed after the record is created.",
+    );
   }
 
   return {
@@ -144,8 +163,12 @@ function mergeRecord(existing: TrackingRecord, patch: Partial<TrackingRecord>): 
     id: existing.id,
     createdAt: existing.createdAt,
     updatedAt: new Date().toISOString(),
-    shipper: patch.shipper ? { ...existing.shipper, ...patch.shipper } : existing.shipper,
-    consignee: patch.consignee ? { ...existing.consignee, ...patch.consignee } : existing.consignee,
+    shipper: patch.shipper
+      ? { ...existing.shipper, ...patch.shipper }
+      : existing.shipper,
+    consignee: patch.consignee
+      ? { ...existing.consignee, ...patch.consignee }
+      : existing.consignee,
     travelHistory: patch.travelHistory
       ? patch.travelHistory.map((event: TrackingEvent) => ({ ...event }))
       : existing.travelHistory,
@@ -153,7 +176,9 @@ function mergeRecord(existing: TrackingRecord, patch: Partial<TrackingRecord>): 
 }
 
 async function getAllSupabase() {
-  const rows = await supabaseRequest<TrackingRow[]>(`${tableName}?select=*&order=id.asc`);
+  const rows = await supabaseRequest<TrackingRow[]>(
+    `${tableName}?select=*&order=id.asc`,
+  );
   return rows.map(rowToRecord);
 }
 
@@ -173,20 +198,36 @@ export async function getTrackingByNo(no: string) {
   return getSupabaseConfig() ? getOneSupabase(no) : getJsonByNo(no);
 }
 
-export async function createTracking(input: Omit<TrackingRecord, "id" | "createdAt" | "updatedAt">) {
+export async function createTracking(
+  input: Omit<TrackingRecord, "id" | "createdAt" | "updatedAt">,
+) {
   const trackingNo = input.trackingNo.trim().toUpperCase();
   if (!trackingNo) throw new Error("Tracking number is required.");
 
   const config = getSupabaseConfig();
   if (!config) {
     const records = getAllJson();
-    if (records.some((record) => record.trackingNo.trim().toUpperCase() === trackingNo)) {
-      throw new Error("A tracking record with that tracking number already exists.");
+    if (
+      records.some(
+        (record) => record.trackingNo.trim().toUpperCase() === trackingNo,
+      )
+    ) {
+      throw new Error(
+        "A tracking record with that tracking number already exists.",
+      );
     }
 
     const now = new Date().toISOString();
-    const id = records.length ? Math.max(...records.map((record) => record.id)) + 1 : 1;
-    const record: TrackingRecord = { ...input, trackingNo, id, createdAt: now, updatedAt: now };
+    const id = records.length
+      ? Math.max(...records.map((record) => record.id)) + 1
+      : 1;
+    const record: TrackingRecord = {
+      ...input,
+      trackingNo,
+      id,
+      createdAt: now,
+      updatedAt: now,
+    };
     records.push(record);
     saveAllJson(records);
     return record;
@@ -197,7 +238,13 @@ export async function createTracking(input: Omit<TrackingRecord, "id" | "created
     method: "POST",
     headers: { Prefer: "return=representation" },
     body: JSON.stringify({
-      ...recordToRow({ ...input, trackingNo, id: 0, createdAt: now, updatedAt: now }),
+      ...recordToRow({
+        ...input,
+        trackingNo,
+        id: 0,
+        createdAt: now,
+        updatedAt: now,
+      }),
       created_at: now,
       updated_at: now,
     }),
@@ -207,7 +254,10 @@ export async function createTracking(input: Omit<TrackingRecord, "id" | "created
   return rowToRecord(rows[0]);
 }
 
-export async function updateTracking(no: string, patch: Partial<Omit<TrackingRecord, "id" | "createdAt" | "updatedAt">>) {
+export async function updateTracking(
+  no: string,
+  patch: Partial<Omit<TrackingRecord, "id" | "createdAt" | "updatedAt">>,
+) {
   const existing = await getTrackingByNo(no);
   if (!existing) return null;
 
@@ -217,7 +267,9 @@ export async function updateTracking(no: string, patch: Partial<Omit<TrackingRec
   if (!config) {
     const records = getAllJson();
     const index = records.findIndex(
-      (record) => record.trackingNo.trim().toUpperCase() === existing.trackingNo.trim().toUpperCase(),
+      (record) =>
+        record.trackingNo.trim().toUpperCase() ===
+        existing.trackingNo.trim().toUpperCase(),
     );
     if (index < 0) return null;
     records[index] = updated;
@@ -230,7 +282,10 @@ export async function updateTracking(no: string, patch: Partial<Omit<TrackingRec
     {
       method: "PATCH",
       headers: { Prefer: "return=representation" },
-      body: JSON.stringify({ ...recordToRow(updated), updated_at: updated.updatedAt }),
+      body: JSON.stringify({
+        ...recordToRow(updated),
+        updated_at: updated.updatedAt,
+      }),
     },
   );
 
@@ -246,7 +301,9 @@ export async function deleteTracking(no: string) {
   if (!config) {
     const records = getAllJson();
     const next = records.filter(
-      (record) => record.trackingNo.trim().toUpperCase() !== existing.trackingNo.trim().toUpperCase(),
+      (record) =>
+        record.trackingNo.trim().toUpperCase() !==
+        existing.trackingNo.trim().toUpperCase(),
     );
     saveAllJson(next);
     return true;
